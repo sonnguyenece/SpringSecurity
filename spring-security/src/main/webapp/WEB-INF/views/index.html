@@ -14,6 +14,7 @@
     <div sec:authorize="isAuthenticated()">
         <span sec:authentication="principal.username"></span>
     </div>
+
 </h3>
 <div sec:authorize="isAnonymous()">
     Login as <a th:href="@{/user}">User</a> or <a th:href="@{/admin}">Admin</a>

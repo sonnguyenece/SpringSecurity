@@ -20,8 +20,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/").permitAll()
-                .and()
+        http
+//                .authorizeRequests().antMatchers("/").permitAll()
+//                .and()
+                //tất cả những trang /user... phải login bằng user mới đc truy cập
                 .authorizeRequests().antMatchers("/user**").hasRole("USER")
                 .and()
                 .authorizeRequests().antMatchers("/admin**").hasRole("ADMIN")
